@@ -1,6 +1,6 @@
 [package]
 name = "rp2040-multicore-per-cpu"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Jeremy Fitzhardinge <jeremy@goop.org>"]
 description = "Enable use of per-core static variables on rp2040"
