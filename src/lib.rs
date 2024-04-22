@@ -112,9 +112,13 @@ mod inner {
     unsafe fn tls_pre_init_hook() {
         for dst in [addr_of_mut!(TLS_CORE_0), addr_of_mut!(TLS_CORE_1)] {
             let datalen = addr_of!(__tdata_end).offset_from(addr_of!(__tdata_start)) as usize;
-            core::ptr::copy(addr_of!(__tdata_start), dst, datalen);
+            if datalen > 0 {
+                core::ptr::copy(addr_of!(__tdata_start), dst, datalen);
+            }
             let bsslen = addr_of!(__tbss_end).offset_from(addr_of!(__tbss_start)) as usize;
-            dst.add(datalen).write_bytes(0, bsslen);
+            if bsslen > 0 {
+                dst.add(datalen).write_bytes(0, bsslen);
+            }
         }
     }
 }
