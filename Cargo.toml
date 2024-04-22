@@ -1,6 +1,6 @@
 [package]
 name = "rp2040-multicore-per-cpu"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Jeremy Fitzhardinge <jeremy@goop.org>"]
 description = "Enable use of per-core static variables on rp2040"
@@ -9,6 +9,7 @@ license = "MIT OR Apache-2.0"
 keywords = ["embedded", "no-std", "rp2040", "multicore", "concurrency"]
 categories = ["embedded", "no-std", "concurrency"]
 include = ["/src", "/examples", "/memory.x"]
+documentation = "https://docs.rs/rp2040-multicore-per-cpu/latest/rp2040_multicore_per_cpu/"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
